@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 //importando a classe de funcionarios
-import { employee } from '../employee';
+import { Employee } from '../employees';
+
+import { EMPLOYEES } from '../mock-employees';
 
 @Component({
   selector: 'app-employees',
@@ -10,12 +12,14 @@ import { employee } from '../employee';
 export class EmployeesComponent implements OnInit {
 
  
-// usando a classe employe para construir o objeto do funcionario
- employee: Employees = {
+ // usando a classe employe para construir o objeto do funcionario
+ employee: Employee = {
     id: 1,
     name: 'João Marcos Santos Teixeira'
   };
 
+   //variavel com todos os funcionarios
+   employees = EMPLOYEES;
 
   constructor() { }
 

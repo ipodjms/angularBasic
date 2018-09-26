@@ -9,3 +9,13 @@
     <input [(ngModel)]="employee.name" placeholder="nome">
   </label>
 </div>
+
+
+
+<h2>Funcionários</h2>
+<ul class="employees">
+	<!-- for com todos os funcionarios -->
+  <li *ngFor="let employee of employees">
+    <span class="badge">{{employee.id}}</span> {{employee.name}}
+  </li>
+</ul>
