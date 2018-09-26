@@ -1,0 +1,11 @@
+<p>
+  {{employee.id }} - 
+  {{employee.name | uppercase }}
+</p>
+
+
+<div>
+  <label>Nome com bind:
+    <input [(ngModel)]="employee.name" placeholder="nome">
+  </label>
+</div>
