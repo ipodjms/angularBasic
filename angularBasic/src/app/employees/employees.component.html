@@ -11,11 +11,26 @@
 </div>
 
 
+<div>
+  <label>Busca de usuarios
+    <input [(ngModel)]="search" placeholder="Busca">
+  </label>
+</div>
+
+
 
 <h2>Funcionários</h2>
 <ul class="employees">
 	<!-- for com todos os funcionarios -->
-  <li *ngFor="let employee of employees">
+  <li *ngFor="let employee of employees" (click)="onSelect(hero)">
     <span class="badge">{{employee.id}}</span> {{employee.name}}
+  </li>
+</ul>
+
+
+<input [(ngModel)]="searchText" placeholder="search text goes here">
+<ul>
+  <li *ngFor="let c of employees | filter : searchText">
+    {{c.name}}
   </li>
 </ul>
