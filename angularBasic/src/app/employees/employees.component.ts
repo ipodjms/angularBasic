@@ -25,10 +25,19 @@ export class EmployeesComponent implements OnInit {
    //variavel com todos os funcionarios
    employees = EMPLOYEES;
 
+   selectedEmployee: Employee;
+	
   constructor() { }
 
   ngOnInit() {
+
   }
+
+	onSelect(employee: Employee): void {
+	  this.selectedEmployee = employee;
+	  console.log (this.selectedEmployee);
+	}   
+  
 
 }
 

@@ -1,36 +1,37 @@
-<p>
-  {{employee.id }} - 
-  {{employee.name | uppercase }}
-</p>
+<!-- <div *ngIf="selectedEmployee">
+
+	<p>
+	  {{selectedEmployee.id }} - 
+	  {{selectedEmployee.name | uppercase }}
+	</p>
 
 
-<div>
-  <label>Nome com bind:
-    <input [(ngModel)]="employee.name" placeholder="nome">
-  </label>
+	<div>
+	  <label>Nome com bind:
+	    <input [(ngModel)]="selectedEmployee.name" placeholder="nome">
+	  </label>
+	</div>
+
 </div>
-
-
-<div>
-  <label>Busca de usuarios
-    <input [(ngModel)]="search" placeholder="Busca">
-  </label>
-</div>
+ -->
 
 
 
 <h2>Funcionários</h2>
-<ul class="employees">
-	<!-- for com todos os funcionarios -->
-  <li *ngFor="let employee of employees" (click)="onSelect(hero)">
-    <span class="badge">{{employee.id}}</span> {{employee.name}}
-  </li>
-</ul>
-
-
 <input [(ngModel)]="searchText" placeholder="search text goes here">
 <ul>
-  <li *ngFor="let c of employees | filter : searchText">
-    {{c.name}}
+  <li *ngFor="let employee of employees | filter : searchText" (click)="onSelect(employee)">
+    {{employee.name}}
   </li>
 </ul>
+
+
+<div *ngIf="selectedEmployee">
+ 
+  <h2>{{selectedEmployee.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedEmployee.id}}</div>
+  <div>
+    <span>name: {{selectedEmployee.name}}</span>
+  </div>
+ 
+</div>
