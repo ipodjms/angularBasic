@@ -21,13 +21,19 @@ export class EmployeesComponent implements OnInit {
  
   
    employees: Employee[];
-
    
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
   	this.getEmployees();
   }
+
+
+  onSelect(): void {
+          
+          this.employeeService.getEmployeesInf()
+            .subscribe(employees => this.employees = employees )
+  }   
 
 
 	   getEmployees(): void {
