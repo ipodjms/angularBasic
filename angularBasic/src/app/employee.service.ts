@@ -92,10 +92,6 @@ export class EmployeeService {
                         	EMPLOYEES.push( { 'id' parseInt(key.id.value),'name' key.name.first } );
 
                         }                        
-
-                         
-
-                        
                         
                     })
 
