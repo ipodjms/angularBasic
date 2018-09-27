@@ -27,7 +27,7 @@ constructor(private employeeService: EmployeeService) { }
 
 	   getEmployees(): void {
 	  	this.employeeService.getEmployees()
-	  		.subscribe(employees => this.employees = employees.slice(1,5) )
+	  		.subscribe(employees => this.employees = employees)
 	}
 
 }
