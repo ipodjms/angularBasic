@@ -11,6 +11,7 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
 
 //importando compoponente para filtrar 
 import { FilterPipe} from './filter.pipe';
+import { MessagesComponent } from './messages/messages.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FilterPipe} from './filter.pipe';
     AppComponent,
     EmployeesComponent,
     FilterPipe,
-    EmployeeDetailComponent
+    EmployeeDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

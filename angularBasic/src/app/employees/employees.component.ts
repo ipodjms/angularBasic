@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-//importando a classe de funcionarios
+
+//importando a classe que constrói o funcionarios
 import { Employee } from '../employees';
 
-import { EMPLOYEES } from '../mock-employees';
+//importando o servico que vai me entregar os funcionarios
+import { EmployeeService } from '../employee.service';
 
 //importando a classe que filtra a lista
 import {FilterPipe} from '../filter.pipe';
@@ -13,31 +15,33 @@ import {FilterPipe} from '../filter.pipe';
   templateUrl: './employees.component.html',
   styleUrls: ['./employees.component.scss']
 })
+
 export class EmployeesComponent implements OnInit {
-
  
- // usando a classe employe para construir o objeto do funcionario
- employee: Employee = {
-    id: 1,
-    name: 'João Marcos Santos Teixeira'
-  };
-
-   //variavel com todos os funcionarios
-   employees = EMPLOYEES;
-
+  
+   // 
    selectedEmployee: Employee;
-	
-  constructor() { }
+
+   employees: Employee[];
+
+   
+  constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
-
+  	this.getEmployees();
   }
+
 
 	onSelect(employee: Employee): void {
 	  this.selectedEmployee = employee;
 	  console.log (this.selectedEmployee);
 	}   
-  
+
+	   getEmployees(): void {
+	  	this.employeeService.getEmployees()
+	  		.subscribe(employees => this.employees = employees )
+	}
+	
 
 }
 
