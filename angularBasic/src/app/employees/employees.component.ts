@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 //importando a classe que constrói o funcionarios
 import { Employee } from '../employees';
 
+
 //importando o servico que vai me entregar os funcionarios
 import { EmployeeService } from '../employee.service';
 
@@ -19,9 +20,6 @@ import {FilterPipe} from '../filter.pipe';
 export class EmployeesComponent implements OnInit {
  
   
-   // 
-   selectedEmployee: Employee;
-
    employees: Employee[];
 
    
@@ -31,11 +29,6 @@ export class EmployeesComponent implements OnInit {
   	this.getEmployees();
   }
 
-
-	onSelect(employee: Employee): void {
-	  this.selectedEmployee = employee;
-	  console.log (this.selectedEmployee);
-	}   
 
 	   getEmployees(): void {
 	  	this.employeeService.getEmployees()

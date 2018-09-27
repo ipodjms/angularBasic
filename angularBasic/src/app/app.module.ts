@@ -13,6 +13,7 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
 import { FilterPipe} from './filter.pipe';
 import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
     EmployeesComponent,
     FilterPipe,
     EmployeeDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

@@ -25,4 +25,11 @@ export class EmployeeService {
 	}
 
 
+	getEmployee(id: number): Observable<Employee> {
+    this.messageService.add('EmployeeService: BUSCADO FUNCIONARIO id=${id}');
+    //retorna somente o funcionário com id
+    return of(EMPLOYEES.find(employee => employee.id === id));
+  }
+
+
 }

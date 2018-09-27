@@ -1,6 +1,14 @@
 //passando o Input para ligar tipo bind deicxando disponivel para o pai
 import { Component, OnInit, Input } from '@angular/core';
+
+//precisa pra pegar a rota ativa e localizacao no browser
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
+
 import { Employee } from '../employees';
+
+import { EmployeeService } from '../employee.service';
 
 
 @Component({
@@ -10,12 +18,36 @@ import { Employee } from '../employees';
 })
 export class EmployeeDetailComponent implements OnInit {
 
-  //
-  @Input() employee: Employee;
+   employee: Employee;
 
-  constructor() { }
+   constructor(
+    private route: ActivatedRoute,
+    private employeeService: EmployeeService
+    private location: Location
+  ) {}
 
-  ngOnInit() {
+	 ngOnInit() {
+	  	this.getEmployee();
+	  }
+
+	   getEmployee(): void {
+	   	const id = +this.route.snapshot.paramMap.get('id');
+	  	this.employeeService.getEmployee(id)
+	  		.subscribe(employee => this.employee = employee )
+	}
+ 
+  goBack(): void {
+    this.location.back();
   }
 
 }
+
+
+
+
+
+
+ 
+ 
+ 
+  

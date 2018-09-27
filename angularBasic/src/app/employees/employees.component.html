@@ -19,11 +19,14 @@
 
 <h2>Funcionários</h2>
 <input [(ngModel)]="searchText" placeholder="search text goes here">
+
 <ul>
-  <li *ngFor="let employee of employees | filter : searchText" (click)="onSelect(employee)">
-    {{employee.name}}
+  <li *ngFor="let employee of employees | filter : searchText">
+  	 <a routerLink="/detail/{{employee.id}}">
+      <span class="badge">{{employee.id}}</span> {{employee.name}}
+    </a>
   </li>
 </ul>
 
 
-<app-employee-detail [employee]="selectedEmployee"></app-employee-detail>
+<!-- <app-employee-detail [employee]="selectedEmployee"></app-employee-detail> -->
