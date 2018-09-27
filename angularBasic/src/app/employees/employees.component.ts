@@ -25,9 +25,8 @@ export class EmployeesComponent implements OnInit {
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
-  	this.getEmployees();
+  	this.getEmployeesInf();
   }
-
 
   onSelect(): void {
           
@@ -40,6 +39,11 @@ export class EmployeesComponent implements OnInit {
 	  	this.employeeService.getEmployees()
 	  		.subscribe(employees => this.employees = employees )
 	}
+
+     getEmployeesInf(): void {
+      this.employeeService.getEmployeesInf()
+        .subscribe(employees => this.employees = employees )
+  }  
 	
 
 }

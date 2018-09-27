@@ -34,7 +34,7 @@ export class EmployeeService {
 		//zerando para nao super encehr o array
 		const EMPLOYEES = [];
 	   
-		this.http.get('https://randomuser.me/api/?page=1&results=10').subscribe(data => {
+		this.http.get('https://randomuser.me/api/?page=1&results=20').subscribe(data => {
 	      console.log(data.results);
 
 
@@ -47,7 +47,7 @@ export class EmployeeService {
                         console.log (key.email);
                         console.log (key.id.value);
 
-                        // EMPLOYEES.push( { 'id' parseInt(key.id.value),'name' key.name.first } );
+                        EMPLOYEES.push( { 'id' parseInt(key.id.value),'name' key.name.first } );
 
                         
                         
