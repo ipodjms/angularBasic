@@ -28,19 +28,17 @@ export class EmployeesComponent implements OnInit {
   	this.getEmployeesInf();
   }
 
-  onSelect(): void {
-          
+  onSelect(): void {       
           this.employeeService.getEmployeesInf()
             .subscribe(employees => this.employees = employees )
   }   
 
-
-	   getEmployees(): void {
+	getEmployees(): void {
 	  	this.employeeService.getEmployees()
 	  		.subscribe(employees => this.employees = employees )
 	}
 
-     getEmployeesInf(): void {
+  getEmployeesInf(): void {
       this.employeeService.getEmployeesInf()
         .subscribe(employees => this.employees = employees )
   }  

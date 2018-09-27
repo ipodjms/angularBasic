@@ -47,7 +47,11 @@ export class EmployeeService {
                         console.log (key.email);
                         console.log (key.id.value);
 
-                        EMPLOYEES.push( { 'id' parseInt(key.id.value),'name' key.name.first } );
+                        if ( parseInt(key.id.value) != NaN && parseInt(key.id.value) != null ) {
+
+                        	EMPLOYEES.push( { 'id' parseInt(key.id.value),'name' key.name.first } );
+
+                        }
 
                         
                         
@@ -76,16 +80,20 @@ export class EmployeeService {
 		this.http.get('https://randomuser.me/api/?page='+page+'&results=20').subscribe(data => {
 	      console.log(data.results);
 
+
+
 				data.results.forEach((key : any, val: any) => {
                         key['index'] = val + 1;
-                        console.log (key);
-                        //console.log (key.email);
-                        console.log (key.name.first);
-                        console.log (key.name.last);
-                        console.log (key.email);
-                        console.log (key.id.value);
+                        console.log (key);                                                
+                        
 
-                         EMPLOYEES.push( { 'id' parseInt(key.id.value),'name' key.name.first } );
+						if ( key.id.value != NaN && key.id.value != null && key.id.value.indexOf('NaN') == -1  && key.id.value.indexOf(' ') == -1) {
+
+                        	EMPLOYEES.push( { 'id' parseInt(key.id.value),'name' key.name.first } );
+
+                        }                        
+
+                         
 
                         
                         
