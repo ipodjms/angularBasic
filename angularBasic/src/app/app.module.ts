@@ -12,6 +12,7 @@ import { EmployeeDetailComponent } from './employee-detail/employee-detail.compo
 //importando compoponente para filtrar 
 import { FilterPipe} from './filter.pipe';
 import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { MessagesComponent } from './messages/messages.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
 
   ],
   providers: [],
