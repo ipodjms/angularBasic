@@ -31,15 +31,25 @@ Layout: Marvel App - Conversei com o DESIGNER e ele não tinha o arquivo aberto,
 
 Requisitos
 Eu como usuário, desejo visualizar a listagem de candidatos; - OK
+
 Eu como usuário, desejo pesquisar um determinado usuário conforme seu nome ou email; - OK **bug no email, buscando nomes.
+
 Eu como usuário, desejo que seja apresentado a foto de um usuário qualquer no menu da Minha Conta (Buscar da API); - ** SEM LAYOUT
+
 Eu como usuário, desejo visualizar as informações de cada candidato (Nome, email, telefone, cidade e estado); - OK
+
 Eu como usuário, desejo enviar para a "LIXEIRA" um usuário que esteja na listagem "TODOS" ou "ATENDIDOS"; - OK
+
 Eu como usuário, desejo enviar para a listagem "TODOS" um usuário que esteja na listagem "ATENDIDOS" ou "LIXEIRA"; - OK
+
 Eu como usuário, desejo marcar como "ATENDIDO" um usuário que esteja na listagem "TODOS" ou "LIXEIRA"; - OK
+
 Eu como usuário, desejo navegar nos filtros laterais conforme a interação executada; - OK
+
 Eu como usuário, desejo que ao clicar em um item da listagem seja apresentado as informações do usuário em uma nova tela; - OK
+
 Eu como usuário, desejo que ao visualizar a informação de um usuário seja possível voltar a tela anterior; - OK
+
 
 
 ##Especificações Técnicas
