@@ -27,14 +27,14 @@ constructor(private employeeService: EmployeeService) { }
   putEmployeeBack(innertext): void {
       const id = innertext;      
       this.employeeService.putEmployeeBack(id)
-        .subscribe(employees => this.employeesDel = employees )
+        //.subscribe(employees => this.employeesDel = employees )
   }   
 
 
 putEmployeeInAnswer(innertext): void {
       const id = innertext;      
       this.employeeService.putEmployeeInAnswer(id)
-        .subscribe(employees => this.employeesDel = employees )
+        //.subscribe(employees => this.employeesDel = employees )
   }  
 
 

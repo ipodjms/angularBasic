@@ -14,6 +14,9 @@ import { MessageService } from './message.service';
 //importando http
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+import { map, filter, scan } from 'rxjs/operators';
+
+
 import {Globals} from './globals'
 
 
@@ -165,17 +168,13 @@ putEmployeeInAnswer(id: number): Observable<Employee> {
 
 
 	getEmployeesDel(): Observable<Employee[]> {	  
-
 	   this.messageService.add('EmployeeService: funcionarios buscados!');	   
 	   return of (EMPLOYEESDEL);
-
 	}	
 
 	getEmployeesAnswer(): Observable<Employee[]> {	  
-
 	   this.messageService.add('EmployeeService: funcionarios buscados!');	   
 	   return of (EMPLOYEESANS);
-
 	}		
 
 
@@ -184,16 +183,18 @@ putEmployeeInAnswer(id: number): Observable<Employee> {
 
 		this.globals.firstLoading = this.globals.firstLoading + 1;
 
-		//alert(this.globals.firstLoading);
+		
 
 		const page = 1;
 
-		if (this.globals.firstLoading == 1) { 
-			this.http.get('https://randomuser.me/api/?page='+page+'&results=20').subscribe(data => {
 
-		     this.globals.firstLoading = this.globals.firstLoading + 1;
-		     
-		      //console.log(data.results);
+		if (this.globals.firstLoading == 1) { 		
+
+		this.http.get('https://randomuser.me/api/?page='+page+'&results=20').subscribe(data =>   {
+
+		     this.globals.firstLoading = this.globals.firstLoading + 1;                     		     
+		     		     
+		      console.log(data);
 
 					data.results.forEach((key : any, val: any) => {
 	                        key['index'] = val + 1;
@@ -208,7 +209,7 @@ putEmployeeInAnswer(id: number): Observable<Employee> {
 	                        
 	                    })
 
-					console.log (EMPLOYEES);
+					//console.log (EMPLOYEES);
 
 
 		    });			
@@ -229,7 +230,6 @@ putEmployeeInAnswer(id: number): Observable<Employee> {
 		const page = this.globals.role = this.globals.role + 1;
 
 		this.http.get('https://randomuser.me/api/?page='+page+'&results=20').subscribe(data => {
-	      console.log(data.results);
 
 				data.results.forEach((key : any, val: any) => {
                         key['index'] = val + 1;
@@ -244,7 +244,7 @@ putEmployeeInAnswer(id: number): Observable<Employee> {
                         
                     })
 
-				console.log (EMPLOYEES);
+				//console.log (EMPLOYEES);
 
 
 	    });
