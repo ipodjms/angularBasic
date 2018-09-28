@@ -51,7 +51,7 @@ ul {
 			border-radius: 100px;
 			max-width: 70px;
 			float: left;
-			
+
 		}
 	}
 }
@@ -59,9 +59,9 @@ ul {
 span {
 	&.load {
 				cursor:pointer;
-				margin: 0 auto;
+				margin: 0 auto 20px auto;
 				position: relative;
-				top: 22px;
+				top: 0px;
 				background: #fff;
 				border:1px solid $cinza-escuro;
 				border-radius: 5px;

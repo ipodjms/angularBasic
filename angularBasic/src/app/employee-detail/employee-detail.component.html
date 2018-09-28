@@ -1,26 +1,29 @@
-<div *ngIf="employee">
+<div *ngIf="employee" class="employee">
  
   <h2>{{employee.name | uppercase}} Details</h2>
 
 	<img src="{{employee.avatar }}" alt="">
 
+  <div><span><b>id: </b> </span>{{employee.id}}</div>
 
-  <div><span>id: </span>{{employee.id}}</div>
   <div>
-    <span>name: {{employee.name}}</span>
+    <span><b>name:</b> {{employee.name}}</span>
   </div>
+
   <div>
-    <span>email: {{employee.email}}</span>
+    <span><b>email:</b> {{employee.email}}</span>
   </div>
+
   <div>
-    <span>phone: {{employee.phone}}</span>
+    <span><b>phone:</b> {{employee.phone}}</span>
   </div>
+
   <div>
-    <span>cidade: {{employee.city}}</span>
+    <span><b>cidade:</b> {{employee.city}}</span>
   </div>      
-  <div>
-    <span>estado: {{employee.state}}</span>
-  </div>        
 
-   <button (click)="goBack()">go back</button>
+  <div>
+    <span><b>estado:</b> {{employee.state}}</span>
+  </div>        
+   <button (click)="goBack()">Voltar</button>
 </div>
