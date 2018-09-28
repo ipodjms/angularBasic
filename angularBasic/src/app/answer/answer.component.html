@@ -1,0 +1,12 @@
+<h2>Respondidos</h2>
+<input class="search" [(ngModel)]="searchText" placeholder="Digite o nome aqui">
+
+<ul>
+  <li *ngFor="let employee of employeesAnswer | filter : searchText">  	 
+  	  <img src="{{employee.avatar }}" alt="">
+      <span class="badge"> <span class="name">{{employee.name}}</span> - {{employee.email}}</span>
+      <button (click)='putEmployeeBack($event.target.value)' value={{employee.id}}>COLOCAR EM TODOS</button>
+      <button (click)='delEmployee($event.target.value)' value={{employee.id}}>LIXEIRA</button>
+      <span style="clear: both; display: block;"></span>
+  </li>
+</ul>
