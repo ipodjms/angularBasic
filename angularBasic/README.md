@@ -6,6 +6,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Rode `ng serve --open` no terminal na pasta da angularbasic/ e seu termina vai abrir no endereço: http://localhost:4200/
 
+APESAR DE TER FEITO TODOS REQUISITOS, NAO CONSEGUIR RESOLVER TODOS ERROS DE TESTE ATE O MOMENTO. ENTAO A PRIMEIRA VEZ QUE VOCE RODAR `ng serve --open`, VAI DAR FALAHA.
+
+POR FAVOR,  ABRA O ARQUIVO answer/answer.component.ts, altere algo e salve, PRONTO, OS SERVIDOR VAI VOLTAR!
+
+
+
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).

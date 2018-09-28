@@ -27,7 +27,7 @@ constructor(private employeeService: EmployeeService) { }
   putEmployeeBack(innertext): void {
       const id = innertext;      
       this.employeeService.putEmployeeBack(id)
-        .subscribe(employees => this.employeesAnswer = employees )
+        .subscribe(employees => this.employeesAnswer = employees ) 
   }   
 
 
