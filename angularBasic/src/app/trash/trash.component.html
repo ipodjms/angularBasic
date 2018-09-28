@@ -1,0 +1,28 @@
+
+<h2>LIXEIRA</h2>
+<input [(ngModel)]="searchText" placeholder="search text goes here">
+
+<ul>
+  <li *ngFor="let employee of employeesDel | filter : searchText">  	 
+      <span class="badge">{{employee.id}}</span> {{employee.name}}    
+  </li>
+</ul>
+
+
+
+<!-- <div *ngIf="selectedEmployee">
+
+	<p>
+	  {{selectedEmployee.id }} - 
+	  {{selectedEmployee.name | uppercase }}
+	</p>
+
+
+	<div>
+	  <label>Nome com bind:
+	    <input [(ngModel)]="selectedEmployee.name" placeholder="nome">
+	  </label>
+	</div>
+
+</div>
+ -->
