@@ -59,6 +59,35 @@ delEmployee(id: number): Observable<Employee> {
 	  }	  
 
 
+
+putEmployeeBack(id: number): Observable<Employee> {
+	    this.messageService.add('EmployeeService: MOVENDO FUNCIONARIO PRA TODOS');
+	    //retorna somente o funcionário com id	    
+
+
+		EMPLOYEESDEL.forEach((key : any, val: any) => {
+                //key['index'] = val + 1;
+                console.log (key);  
+                console.log (val);                                                                				                
+                if (key.id == id) {
+                	//coloca na lixeira
+                	EMPLOYEES.push(EMPLOYEESDEL[val]);
+                	//retira do ativo
+                	EMPLOYEESDEL.splice(val,1)
+                } else {
+
+                }
+            })
+
+		console.log (EMPLOYEES);
+		console.log (EMPLOYEESDEL);
+
+
+
+	   return of( );
+	  }	  	  
+
+
 	getEmployeesDel(): Observable<Employee[]> {	  
 
 	   this.messageService.add('EmployeeService: funcionarios buscados!');	   

@@ -19,13 +19,16 @@ employeesDel: Employee[];
 
 constructor(private employeeService: EmployeeService) { }
 
-
   ngOnInit() {
   	    this.employeeService.getEmployeesDel()
         .subscribe(employees => this.employeesDel = employees )
   }
 
-
+  putEmployeeBack(innertext): void {
+      const id = innertext;      
+      this.employeeService.putEmployeeBack(id)
+        .subscribe(employees => this.employeesDel = employees )
+  }   
 
 
 
