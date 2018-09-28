@@ -32,7 +32,7 @@ Layout: Marvel App - Conversei com o DESIGNER e ele não tinha o arquivo aberto,
 Requisitos
 Eu como usuário, desejo visualizar a listagem de candidatos; - OK
 
-Eu como usuário, desejo pesquisar um determinado usuário conforme seu nome ou email; - OK **bug no email, buscando nomes.
+Eu como usuário, desejo pesquisar um determinado usuário conforme seu nome ou email; - OK **bug no email, somente buscando nomes.
 
 Eu como usuário, desejo que seja apresentado a foto de um usuário qualquer no menu da Minha Conta (Buscar da API); - ** SEM LAYOUT
 
