@@ -21,8 +21,8 @@ constructor(private employeeService: EmployeeService) { }
 
 
 	onSelect(employee: Employee): void {
-	  this.selectedEmployee = employee;
-	  console.log (this.selectedEmployee);
+	  //this.selectedEmployee = employee;
+	  //console.log (this.selectedEmployee);
 	}   
 
 	   getEmployees(): void {

@@ -8,7 +8,7 @@ Rode `ng serve --open` no terminal na pasta da angularbasic/ e seu termina vai a
 
 APESAR DE TER FEITO TODOS REQUISITOS, NAO CONSEGUIR RESOLVER TODOS ERROS DE TESTE ATE O MOMENTO. ENTAO A PRIMEIRA VEZ QUE VOCE RODAR `ng serve --open`, VAI DAR FALAHA.
 
-POR FAVOR,  ABRA O ARQUIVO answer/answer.component.ts, altere algo e salve, PRONTO, OS SERVIDOR VAI VOLTAR!
+POR FAVOR,  ABRA O ARQUIVO answer/answer.component.ts, altere algo e salve, PRONTO, APERTE RELOAD O SERVIDOR VAI VOLTAR!
 
 
 

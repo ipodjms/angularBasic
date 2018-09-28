@@ -188,12 +188,12 @@ putEmployeeInAnswer(id: number): Observable<Employee> {
 
 		const page = 1;
 
-		if (this.globals.firstLoading == 1) {
+		if (this.globals.firstLoading == 1) { 
 			this.http.get('https://randomuser.me/api/?page='+page+'&results=20').subscribe(data => {
 
 		     this.globals.firstLoading = this.globals.firstLoading + 1;
 		     
-		      console.log(data.results);
+		      //console.log(data.results);
 
 					data.results.forEach((key : any, val: any) => {
 	                        key['index'] = val + 1;
