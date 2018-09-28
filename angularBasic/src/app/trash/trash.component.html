@@ -5,7 +5,8 @@
 <ul>
   <li *ngFor="let employee of employeesDel | filter : searchText">  	 
       <span class="badge">{{employee.id}}</span> {{employee.name}}    
-      <button (click)='putEmployeeBack($event.target.value)' value={{employee.id}}>COLOCAR DE VOLTA</button>
+      <button (click)='putEmployeeBack($event.target.value)' value={{employee.id}}>COLOCAR EM TODOS</button>
+      <button (click)='putEmployeeInAnswer($event.target.value)' value={{employee.id}}>ATENDER</button>
   </li>
 </ul>
 

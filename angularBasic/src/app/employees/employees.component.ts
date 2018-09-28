@@ -50,6 +50,12 @@ export class EmployeesComponent implements OnInit {
         .subscribe(employees => this.employees = employees )
   }   
 
+  putEmployeeInAnswer(innertext): void {
+      const id = innertext;      
+      this.employeeService.putEmployeeInAnswer(id)
+        .subscribe(employees => this.employeesAnswer = employees )
+  }       
+
 }
 
 

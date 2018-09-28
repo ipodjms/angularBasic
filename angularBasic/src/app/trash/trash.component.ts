@@ -31,6 +31,13 @@ constructor(private employeeService: EmployeeService) { }
   }   
 
 
+putEmployeeInAnswer(innertext): void {
+      const id = innertext;      
+      this.employeeService.putEmployeeInAnswer(id)
+        .subscribe(employees => this.employeesAnswer = employees )
+  }  
+
+
 
 }
 

@@ -1,9 +1,15 @@
 
-<h1>{{title}}</h1>
+<div class="row">
+	<div classs="col col-12 text-center">
+		<h1>{{title}}</h1>		
+	</div>	
+</div>
+
 <nav>
   <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/employees">Heroes</a>
-  <a routerLink="/trash">Trash</a>
+  <a routerLink="/employees">Todos</a>
+  <a routerLink="/trash">Lixeira</a>
+  <a routerLink="/answer">Respondidos</a>
 </nav>
 <router-outlet></router-outlet>
 <app-messages></app-messages>

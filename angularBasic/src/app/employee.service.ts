@@ -6,6 +6,7 @@ import { Observable, of } from 'rxjs';
 import { Employee } from './employees';
 import { EMPLOYEES } from './mock-employees';
 import { EMPLOYEESDEL } from './mock-employees';
+import { EMPLOYEESANS } from './mock-employees';
 
 //esse servico só vai exibir msg de sucesso ou nao
 import { MessageService } from './message.service';
@@ -48,10 +49,26 @@ delEmployee(id: number): Observable<Employee> {
                 } else {
 
                 }
-            })
+            });
+
+
+		EMPLOYEESANS.forEach((key : any, val: any) => {
+                //key['index'] = val + 1;
+                console.log (key);  
+                console.log (val);                                                                				                
+                if (key.id == id) {
+                	//coloca na lixeira
+                	EMPLOYEESDEL.push(EMPLOYEESANS[val]);
+                	//retira do ativo
+                	EMPLOYEESANS.splice(val,1)
+                } else {
+
+                }
+            });		
 
 		console.log (EMPLOYEES);
 		console.log (EMPLOYEESDEL);
+		console.log (EMPLOYEESANS);
 
 
 
@@ -77,15 +94,74 @@ putEmployeeBack(id: number): Observable<Employee> {
                 } else {
 
                 }
-            })
+            });
+
+
+		EMPLOYEESANS.forEach((key : any, val: any) => {
+                //key['index'] = val + 1;
+                console.log (key);  
+                console.log (val);                                                                				                
+                if (key.id == id) {
+                	//coloca na lixeira
+                	EMPLOYEES.push(EMPLOYEESANS[val]);
+                	//retira do ativo
+                	EMPLOYEESDEL.splice(val,1)
+                } else {
+
+                }
+            });		
 
 		console.log (EMPLOYEES);
 		console.log (EMPLOYEESDEL);
+		console.log (EMPLOYEESANS);
 
 
 
 	   return of( );
-	  }	  	  
+	  }	 
+
+
+putEmployeeInAnswer(id: number): Observable<Employee> {
+	    this.messageService.add('EmployeeService: MOVENDO FUNCIONARIO PRA ATENDIDOS');
+	    //retorna somente o funcionário com id	    
+
+
+		EMPLOYEESDEL.forEach((key : any, val: any) => {
+                //key['index'] = val + 1;
+                console.log (key);  
+                console.log (val);                                                                				                
+                if (key.id == id) {
+                	//coloca na lixeira
+                	EMPLOYEESANS.push(EMPLOYEESDEL[val]);
+                	//retira do ativo
+                	EMPLOYEESDEL.splice(val,1)
+                } else {
+
+                }
+            });
+
+		EMPLOYEES.forEach((key : any, val: any) => {
+                //key['index'] = val + 1;
+                console.log (key);  
+                console.log (val);                                                                				                
+                if (key.id == id) {
+                	//coloca na lixeira
+                	EMPLOYEESANS.push(EMPLOYEES[val]);
+                	//retira do ativo
+                	EMPLOYEES.splice(val,1)
+                } else {
+
+                }
+            });		
+
+		console.log (EMPLOYEES);
+		console.log (EMPLOYEESDEL);
+		console.log (EMPLOYEESANS);
+
+
+
+	   return of( );
+	  }	 	   	  
 
 
 	getEmployeesDel(): Observable<Employee[]> {	  
@@ -94,6 +170,13 @@ putEmployeeBack(id: number): Observable<Employee> {
 	   return of (EMPLOYEESDEL);
 
 	}	
+
+	getEmployeesAnswer(): Observable<Employee[]> {	  
+
+	   this.messageService.add('EmployeeService: funcionarios buscados!');	   
+	   return of (EMPLOYEESANS);
+
+	}		
 
 
 	//chamado só no init, tem m veificador para nao recarregar toda vez

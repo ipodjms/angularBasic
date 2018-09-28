@@ -5,3 +5,5 @@ import { Employee } from './employees';
 export const EMPLOYEES: Employee[] = [];
 
 export const EMPLOYEESDEL: Employee[] = [];
+
+export const EMPLOYEESANS: Employee[] = [];

@@ -18,6 +18,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 //importando cliente http 
 import { HttpClientModule }    from '@angular/common/http';
 import { TrashComponent } from './trash/trash.component';
+import { AnswerComponent } from './answer/answer.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { TrashComponent } from './trash/trash.component';
     EmployeeDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    TrashComponent
+    TrashComponent,
+    AnswerComponent
   ],
   imports: [
     BrowserModule,
