@@ -18,21 +18,23 @@
 
 
 <h2>Funcionários</h2>
-<input [(ngModel)]="searchText" placeholder="search text goes here">
+
+<input class="search" [(ngModel)]="searchText" placeholder="Digite o nome aqui">
 
 <ul>
   <li *ngFor="let employee of employees | filter : searchText">
-  	<img src="{{employee.avatar }}" alt="">
-  	 <a routerLink="/detail/{{employee.id}}">
-      <span class="badge">{{employee.id}} - {{employee.name}} - {{employee.email}}</span>
+  	<a style="margin-right: 0;" routerLink="/detail/{{employee.id}}"><img src="{{employee.avatar }}" alt=""></a>
+  	 <a class="link" routerLink="/detail/{{employee.id}}">
+      <span class="badge"> <span class="name">{{employee.name}}</span> - {{employee.email}}</span>
     </a>
       <button (click)='putEmployeeInAnswer($event.target.value)' value={{employee.id}}>ATENDER</button>
       <button (click)='delEmployee($event.target.value)' value={{employee.id}}>LIXEIRA</button>
+      <span style="clear: both; display: block;"></span>
   </li>
 </ul>
 
 
-<span (click)="onSelect()">Carregar mais</span>
+<span class="load" (click)="onSelect()">Carregar mais</span>
 
 
 <!-- <app-employee-detail [employee]="selectedEmployee"></app-employee-detail> -->

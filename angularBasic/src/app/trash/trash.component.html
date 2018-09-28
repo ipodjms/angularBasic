@@ -1,31 +1,12 @@
-
-<h2>LIXEIRA</h2>
-<input [(ngModel)]="searchText" placeholder="search text goes here">
+<h2>Lixeira</h2>
+<input class="search" [(ngModel)]="searchText" placeholder="Digite o nome aqui">
 
 <ul>
   <li *ngFor="let employee of employeesDel | filter : searchText">  	 
   	  <img src="{{employee.avatar }}" alt="">
-      <span class="badge">{{employee.id}}</span> {{employee.name}}    
+      <span class="badge"> <span class="name">{{employee.name}}</span> - {{employee.email}}</span>
       <button (click)='putEmployeeBack($event.target.value)' value={{employee.id}}>COLOCAR EM TODOS</button>
       <button (click)='putEmployeeInAnswer($event.target.value)' value={{employee.id}}>ATENDER</button>
+      <span style="clear: both; display: block;"></span>
   </li>
 </ul>
-
-
-
-<!-- <div *ngIf="selectedEmployee">
-
-	<p>
-	  {{selectedEmployee.id }} - 
-	  {{selectedEmployee.name | uppercase }}
-	</p>
-
-
-	<div>
-	  <label>Nome com bind:
-	    <input [(ngModel)]="selectedEmployee.name" placeholder="nome">
-	  </label>
-	</div>
-
-</div>
- -->
