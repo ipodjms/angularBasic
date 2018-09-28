@@ -190,12 +190,11 @@ putEmployeeInAnswer(id: number): Observable<Employee> {
 
 		if (this.globals.firstLoading == 1) { 		
 
-		this.http.get('https://randomuser.me/api/?page='+page+'&results=20').subscribe(data =>   {
+
+		this.http.get('https://randomuser.me/api/?page='+page+'&results=20').subscribe((data:any) =>   {
 
 		     this.globals.firstLoading = this.globals.firstLoading + 1;                     		     
-		     		     
-		      console.log(data);
-
+		     		      
 					data.results.forEach((key : any, val: any) => {
 	                        key['index'] = val + 1;
 	                        console.log (key);                                                
@@ -208,9 +207,6 @@ putEmployeeInAnswer(id: number): Observable<Employee> {
 	                        }                        
 	                        
 	                    })
-
-					//console.log (EMPLOYEES);
-
 
 		    });			
 		}
@@ -229,13 +225,11 @@ putEmployeeInAnswer(id: number): Observable<Employee> {
 
 		const page = this.globals.role = this.globals.role + 1;
 
-		this.http.get('https://randomuser.me/api/?page='+page+'&results=20').subscribe(data => {
+		this.http.get('https://randomuser.me/api/?page='+page+'&results=20').subscribe((data:any) => {
 
 				data.results.forEach((key : any, val: any) => {
                         key['index'] = val + 1;
-                        console.log (key);                                                
-                        
-
+                        //console.log (key);                                                                        
 						if ( key.id.value != NaN && key.id.value != null && key.id.value.indexOf('NaN') == -1  && key.id.value.indexOf(' ') == -1) {
 
                         	EMPLOYEES.push( { 'id' : parseInt(key.id.value),'name' : key.name.first + ' ' + key.name.last , 'email' : key.email, 'phone' : key.phone, 'city' : key.location.city, 'state' : key.location.state, 'avatar' : key.picture.large } );
