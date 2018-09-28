@@ -5,4 +5,5 @@ export class Employee {
   phone: string;
   city: string;
   state: string;
+  avatar: string;
 }

@@ -4,6 +4,7 @@
 
 <ul>
   <li *ngFor="let employee of employeesDel | filter : searchText">  	 
+  	  <img src="{{employee.avatar }}" alt="">
       <span class="badge">{{employee.id}}</span> {{employee.name}}    
       <button (click)='putEmployeeBack($event.target.value)' value={{employee.id}}>COLOCAR EM TODOS</button>
       <button (click)='putEmployeeInAnswer($event.target.value)' value={{employee.id}}>ATENDER</button>

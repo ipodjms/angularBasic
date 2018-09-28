@@ -1,6 +1,10 @@
 <div *ngIf="employee">
  
   <h2>{{employee.name | uppercase}} Details</h2>
+
+	<img src="{{employee.avatar }}" alt="">
+
+
   <div><span>id: </span>{{employee.id}}</div>
   <div>
     <span>name: {{employee.name}}</span>
@@ -17,6 +21,6 @@
   <div>
     <span>estado: {{employee.state}}</span>
   </div>        
-  
+
    <button (click)="goBack()">go back</button>
 </div>

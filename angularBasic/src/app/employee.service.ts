@@ -202,7 +202,7 @@ putEmployeeInAnswer(id: number): Observable<Employee> {
 
 							if ( key.id.value != NaN && key.id.value != null && key.id.value.indexOf('NaN') == -1  && key.id.value.indexOf(' ') == -1) {
 
-	                        	EMPLOYEES.push( { 'id' parseInt(key.id.value),'name' key.name.first, 'email' key.email, 'phone' key.phone, 'city' key.location.city, 'state' key.location.state } );
+	                        	EMPLOYEES.push( { 'id' parseInt(key.id.value),'name' key.name.first, 'email' key.email, 'phone' key.phone, 'city' key.location.city, 'state' key.location.state, 'avatar' key.picture.large } );
 
 	                        }                        
 	                        
@@ -238,7 +238,7 @@ putEmployeeInAnswer(id: number): Observable<Employee> {
 
 						if ( key.id.value != NaN && key.id.value != null && key.id.value.indexOf('NaN') == -1  && key.id.value.indexOf(' ') == -1) {
 
-                        	EMPLOYEES.push( { 'id' parseInt(key.id.value),'name' key.name.first, 'email' key.email, 'phone' key.phone, 'city' key.location.city, 'state' key.location.state } );
+                        	EMPLOYEES.push( { 'id' parseInt(key.id.value),'name' key.name.first, 'email' key.email, 'phone' key.phone, 'city' key.location.city, 'state' key.location.state, 'avatar' key.picture.large } );
 
                         }                        
                         

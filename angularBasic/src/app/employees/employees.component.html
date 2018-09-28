@@ -22,6 +22,7 @@
 
 <ul>
   <li *ngFor="let employee of employees | filter : searchText">
+  	<img src="{{employee.avatar }}" alt="">
   	 <a routerLink="/detail/{{employee.id}}">
       <span class="badge">{{employee.id}} - {{employee.name}} - {{employee.email}}</span>
     </a>
