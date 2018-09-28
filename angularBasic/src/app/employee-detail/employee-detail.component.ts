@@ -22,7 +22,7 @@ export class EmployeeDetailComponent implements OnInit {
 
    constructor(
     private route: ActivatedRoute,
-    private employeeService: EmployeeService
+    private employeeService: EmployeeService,
     private location: Location
   ) {}
 
