@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Rode `ng serve --open` no terminal na pasta da angularbasic/ e seu termina vai abrir no endereço: http://localhost:4200/
+Rode `ng serve --open` no terminal na pasta da angularbasic/angularbasic/ e seu termina vai abrir no endereço: http://localhost:4200/
 
 APESAR DE TER FEITO TODOS REQUISITOS, NAO CONSEGUIR RESOLVER TODOS ERROS DE TESTE ATE O MOMENTO. ENTAO A PRIMEIRA VEZ QUE VOCE RODAR `ng serve --open`, VAI DAR FALAHA.
 
