@@ -66,6 +66,12 @@ delEmployee(id: number): Observable<Employee> {
                 }
             });		
 
+		console.log (EMPLOYEES);
+		console.log (EMPLOYEESDEL);
+		console.log (EMPLOYEESANS);
+
+
+
 	   return of( );
 	  }	  
 
@@ -105,9 +111,9 @@ putEmployeeBack(id: number): Observable<Employee> {
                 }
             });		
 
-		// console.log (EMPLOYEES);
-		// console.log (EMPLOYEESDEL);
-		// console.log (EMPLOYEESANS);
+		console.log (EMPLOYEES);
+		console.log (EMPLOYEESDEL);
+		console.log (EMPLOYEESANS);
 
 
 
@@ -148,6 +154,10 @@ putEmployeeInAnswer(id: number): Observable<Employee> {
                 }
             });		
 
+		console.log (EMPLOYEES);
+		console.log (EMPLOYEESDEL);
+		console.log (EMPLOYEESANS);
+
 
 
 	   return of( );
@@ -183,7 +193,7 @@ putEmployeeInAnswer(id: number): Observable<Employee> {
 
 		     this.globals.firstLoading = this.globals.firstLoading + 1;
 		     
-		      //console.log(data.results);
+		      console.log(data.results);
 
 					data.results.forEach((key : any, val: any) => {
 	                        key['index'] = val + 1;
@@ -192,7 +202,7 @@ putEmployeeInAnswer(id: number): Observable<Employee> {
 
 							if ( key.id.value != NaN && key.id.value != null && key.id.value.indexOf('NaN') == -1  && key.id.value.indexOf(' ') == -1) {
 
-	                        	EMPLOYEES.push( { 'id' parseInt(key.id.value),'name' key.name.first + ' ' + key.name.last , 'email' key.email, 'phone' key.phone, 'city' key.location.city, 'state' key.location.state, 'avatar' key.picture.large } );
+	                        	EMPLOYEES.push( { 'id' : parseInt(key.id.value),'name' : key.name.first + ' ' + key.name.last , 'email' : key.email, 'phone' : key.phone, 'city' : key.location.city, 'state' : key.location.state, 'avatar' : key.picture.large } );
 
 	                        }                        
 	                        
@@ -223,12 +233,12 @@ putEmployeeInAnswer(id: number): Observable<Employee> {
 
 				data.results.forEach((key : any, val: any) => {
                         key['index'] = val + 1;
-                       // console.log (key);                                                
+                        console.log (key);                                                
                         
 
 						if ( key.id.value != NaN && key.id.value != null && key.id.value.indexOf('NaN') == -1  && key.id.value.indexOf(' ') == -1) {
 
-                        	EMPLOYEES.push( { 'id' parseInt(key.id.value),'name' key.name.first + ' ' + key.name.last, 'email' key.email, 'phone' key.phone, 'city' key.location.city, 'state' key.location.state, 'avatar' key.picture.large } );
+                        	EMPLOYEES.push( { 'id' : parseInt(key.id.value),'name' : key.name.first + ' ' + key.name.last , 'email' : key.email, 'phone' : key.phone, 'city' : key.location.city, 'state' : key.location.state, 'avatar' : key.picture.large } );
 
                         }                        
                         

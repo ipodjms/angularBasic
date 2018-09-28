@@ -9,7 +9,7 @@ import { TrashComponent }  from './trash/trash.component';
 import { AnswerComponent }  from './answer/answer.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: '', redirectTo: '/employees', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: EmployeeDetailComponent },
   { path: 'employees', component: EmployeesComponent },
