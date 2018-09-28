@@ -91,7 +91,7 @@ Publicar o projeto em alguma plataforma (Heroku, Wedeploy, Firebase, etc), afim 
 Especificações Gerais
 Utilizar Angular; - OK
 Utilizar pré-processador de CSS (Fique a vontade para usar alguma lib/framework css); - OK
-ECMAScript 6; - OK
+ECMAScript 6; - NAO - POR ISSO A RAIZ DE VARIOS BUGS
 Flexbox;
 Armazenar o código fonte no Github; - OK
 Documentar no readme.md como executar o projeto; - OK
