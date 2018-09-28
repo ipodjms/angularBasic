@@ -26,7 +26,7 @@ API: RANDOM USER GENERATOR
 
 Layout: Marvel App - Conversei com o DESIGNER e ele não tinha o arquivo aberto, somente esse navegável de interações, por isso o layout não está tão idêntico, gentileza se necessário reavaliar.
 
-Ao efetuar a estimativa para realização, por favor avise o RH. - 4 dias foi suficiente.
+Ao efetuar a estimativa para realização, por favor avise o RH. - 3 a 4 dias foram suficiente (incluindo estudos).
 
 Requisitos
 Eu como usuário, desejo visualizar a listagem de candidatos; - OK
