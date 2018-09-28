@@ -19,7 +19,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule }    from '@angular/common/http';
 import { TrashComponent } from './trash/trash.component';
 import { AnswerComponent } from './answer/answer.component';
-//import { AnswerComponent } from './answer/answer.component';
+
 
 
 @NgModule({
@@ -31,8 +31,8 @@ import { AnswerComponent } from './answer/answer.component';
     MessagesComponent,
     DashboardComponent,
     TrashComponent,
-    AnswerComponent,
-    //AnswerComponent
+    AnswerComponent
+    
   ],
   imports: [
     BrowserModule,

@@ -105,7 +105,7 @@ putEmployeeBack(id: number): Observable<Employee> {
                 	//coloca na lixeira
                 	EMPLOYEES.push(EMPLOYEESANS[val]);
                 	//retira do ativo
-                	EMPLOYEESDEL.splice(val,1)
+                	EMPLOYEESANS.splice(val,1)
                 } else {
 
                 }
