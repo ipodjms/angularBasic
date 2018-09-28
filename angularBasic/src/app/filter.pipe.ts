@@ -10,6 +10,7 @@ searchText = searchText.toLowerCase();
 return items.filter( it => {
 	   console.log(it.name);
        return it.name.toLowerCase().includes(searchText);
+       //return it.name.toLowerCase().includes(searchText);
        //pass name to fix bug
     });
    }
