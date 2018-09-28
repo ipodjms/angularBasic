@@ -15,9 +15,9 @@ export class DashboardComponent implements OnInit {
 
 constructor(private employeeService: EmployeeService) { }
 
-  ngOnInit() {
-  	this.getEmployees();
-  }
+	ngOnInit() {
+		this.getEmployees();
+	}
 
 
 	onSelect(employee: Employee): void {

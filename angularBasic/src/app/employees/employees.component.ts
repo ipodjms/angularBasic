@@ -20,7 +20,7 @@ import {FilterPipe} from '../filter.pipe';
 export class EmployeesComponent implements OnInit {
  
   
-   employees: Employee[];
+  employees: Employee[];
    
   constructor(private employeeService: EmployeeService) { }
 

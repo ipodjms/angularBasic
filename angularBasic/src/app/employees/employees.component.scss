@@ -84,3 +84,45 @@ span {
 
 }
 
+
+@media (max-width: 667px)  { 
+
+	ul  {
+		li {
+			a {
+				margin-right: 0 !important;
+				margin-bottom: 30px;
+				display: inline;
+				left: 20px;
+				top: 15px !important;
+			}
+		}
+	}
+
+	ul li button {
+		margin-top: 20px;
+		top:21px;
+	}
+
+ }
+
+
+@media (max-width: 667px) and (orientation: landscape) {
+
+	ul  {
+		li {
+			a {				
+				//left: 20px;
+				top: -5px !important;
+				display: block;
+			}
+		}
+	}
+
+	ul li button {
+		margin-top: 0px;
+		top:21px;
+	}
+
+}
+
