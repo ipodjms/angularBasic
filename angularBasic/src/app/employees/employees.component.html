@@ -25,6 +25,7 @@
   	 <a routerLink="/detail/{{employee.id}}">
       <span class="badge">{{employee.id}}</span> {{employee.name}}
     </a>
+      <button (click)='delEmployee($event.target.value)' value={{employee.id}}>LIXEIRA</button>
   </li>
 </ul>
 

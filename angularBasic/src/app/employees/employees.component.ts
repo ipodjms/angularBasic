@@ -25,7 +25,7 @@ export class EmployeesComponent implements OnInit {
   constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
-  	this.getEmployeesInf();
+  	this.getEmployees();
   }
 
   onSelect(): void {       
@@ -43,6 +43,12 @@ export class EmployeesComponent implements OnInit {
         .subscribe(employees => this.employees = employees )
   }  
 	
+
+  delEmployee(innertext): void {
+      const id = innertext;      
+      this.employeeService.delEmployee(id)
+        .subscribe(employees => this.employees = employees )
+  }   
 
 }
 

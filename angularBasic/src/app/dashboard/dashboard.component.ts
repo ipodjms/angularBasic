@@ -11,7 +11,7 @@ import { EmployeeService } from '../employee.service';
 
 export class DashboardComponent implements OnInit {
 
-  employees: Employee[] = [];
+  employees: Employee[];
 
 constructor(private employeeService: EmployeeService) { }
 

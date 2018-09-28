@@ -10,6 +10,8 @@ import { MessageService } from '../message.service';
 })
 export class MessagesComponent implements OnInit {
 
+	employeesdel: Employee[];
+
   //deixa o serivo disponivel para exibir
   constructor(public messageService: MessageService) { }
 

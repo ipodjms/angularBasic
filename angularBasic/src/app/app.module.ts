@@ -17,6 +17,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 //importando cliente http 
 import { HttpClientModule }    from '@angular/common/http';
+import { TrashComponent } from './trash/trash.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HttpClientModule }    from '@angular/common/http';
     FilterPipe,
     EmployeeDetailComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    TrashComponent
   ],
   imports: [
     BrowserModule,

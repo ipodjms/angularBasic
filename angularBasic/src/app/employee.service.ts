@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 //importando a classe de funcionarios
 import { Employee } from './employees';
 import { EMPLOYEES } from './mock-employees';
+import { EMPLOYEESDEL } from './mock-employees';
 
 //esse servico só vai exibir msg de sucesso ou nao
 import { MessageService } from './message.service';
@@ -29,41 +30,82 @@ export class EmployeeService {
 
 	}
 
-	getEmployees(): Observable<Employee[]> {	  
 
-		//zerando para nao super encehr o array
-		const EMPLOYEES = [];
-	   
-		this.http.get('https://randomuser.me/api/?page=1&results=20').subscribe(data => {
-	      console.log(data.results);
+delEmployee(id: number): Observable<Employee> {
+	    this.messageService.add('EmployeeService: MOVENDO FUNCIONARIO PRA LIXEIRA');
+	    //retorna somente o funcionário com id	    
 
 
-				data.results.forEach((key : any, val: any) => {
-                        key['index'] = val + 1;
-                        console.log (key);
-                        //console.log (key.email);
-                        console.log (key.name.first);
-                        console.log (key.name.last);
-                        console.log (key.email);
-                        console.log (key.id.value);
+		EMPLOYEES.forEach((key : any, val: any) => {
+                //key['index'] = val + 1;
+                console.log (key);  
+                console.log (val);                                                                				                
+                if (key.id == id) {
+                	//coloca na lixeira
+                	EMPLOYEESDEL.push(EMPLOYEES[val]);
+                	//retira do ativo
+                	EMPLOYEES.splice(val,1)
+                } else {
 
-                        if ( parseInt(key.id.value) != NaN && parseInt(key.id.value) != null ) {
+                }
+            })
 
-                        	EMPLOYEES.push( { 'id' parseInt(key.id.value),'name' key.name.first } );
-
-                        }
-
-                        
-                        
-                    })
-
-				console.log (EMPLOYEES);
+		console.log (EMPLOYEES);
+		console.log (EMPLOYEESDEL);
 
 
 
-	    });
+	   return of( );
+	  }	  
+
+
+	getEmployeesDel(): Observable<Employee[]> {	  
 
 	   this.messageService.add('EmployeeService: funcionarios buscados!');	   
+	   return of (EMPLOYEESDEL);
+
+	}	
+
+
+	//chamado só no init, tem m veificador para nao recarregar toda vez
+	getEmployees(): Observable<Employee[]> {	  
+
+		this.globals.firstLoading = this.globals.firstLoading + 1;
+
+		//alert(this.globals.firstLoading);
+
+		const page = 1;
+
+		if (this.globals.firstLoading == 1) {
+			this.http.get('https://randomuser.me/api/?page='+page+'&results=20').subscribe(data => {
+
+		     this.globals.firstLoading = this.globals.firstLoading + 1;
+		     
+		      console.log(data.results);
+
+					data.results.forEach((key : any, val: any) => {
+	                        key['index'] = val + 1;
+	                        console.log (key);                                                
+	                        
+
+							if ( key.id.value != NaN && key.id.value != null && key.id.value.indexOf('NaN') == -1  && key.id.value.indexOf(' ') == -1) {
+
+	                        	EMPLOYEES.push( { 'id' parseInt(key.id.value),'name' key.name.first } );
+
+	                        }                        
+	                        
+	                    })
+
+					console.log (EMPLOYEES);
+
+
+		    });			
+		}
+
+
+
+	   this.messageService.add('EmployeeService: funcionarios buscados!');	   
+	   
 	   return of (EMPLOYEES);
 
 	}
@@ -72,15 +114,10 @@ export class EmployeeService {
 
 	getEmployeesInf(): Observable<Employee[]> {	  
 
-
-
 		const page = this.globals.role = this.globals.role + 1;
-
 
 		this.http.get('https://randomuser.me/api/?page='+page+'&results=20').subscribe(data => {
 	      console.log(data.results);
-
-
 
 				data.results.forEach((key : any, val: any) => {
                         key['index'] = val + 1;
@@ -96,8 +133,6 @@ export class EmployeeService {
                     })
 
 				console.log (EMPLOYEES);
-
-				
 
 
 	    });
