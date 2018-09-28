@@ -6,16 +6,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Rode `ng serve --open` no terminal na pasta da angularbasic/angularbasic/ e seu termina vai abrir no endereço: http://localhost:4200/
 
-APESAR DE TER FEITO TODOS REQUISITOS, NAO CONSEGUIR RESOLVER TODOS ERROS DE TESTE ATE O MOMENTO. ENTAO A PRIMEIRA VEZ QUE VOCE RODAR `ng serve --open`, VAI DAR FALAHA.
-
-POR FAVOR,  ABRA O ARQUIVO answer/answer.component.ts, altere algo e salve, PRONTO, APERTE RELOAD O SERVIDOR VAI VOLTAR!
-
-
-
 
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
 
 ## Running end-to-end tests
 
@@ -31,13 +26,13 @@ Obrigado por avaliar.
 
 API: RANDOM USER GENERATOR
 
-Layout: Marvel App - Conversei com o DESIGNER e ele não tinha o arquivo aberto, somente esse navegável de interações, por isso o layout não está tão idêntico, gentileza se necessário reavaliar.
+Layout: Marvel App - Conversei com o DESIGNER e ele não tinha o arquivo aberto, somente esse navegável de interações, por isso o layout não está tão idêntico, gentileza revaliar se necessário.
 
 Ao efetuar a estimativa para realização, por favor avise o RH. - 3 a 4 dias foram suficiente (incluindo estudos).
 
 Requisitos
 Eu como usuário, desejo visualizar a listagem de candidatos; - OK
-Eu como usuário, desejo pesquisar um determinado usuário conforme seu nome ou email; - OK **bug no email
+Eu como usuário, desejo pesquisar um determinado usuário conforme seu nome ou email; - OK **bug no email, buscando nomes.
 Eu como usuário, desejo que seja apresentado a foto de um usuário qualquer no menu da Minha Conta (Buscar da API); - ** SEM LAYOUT
 Eu como usuário, desejo visualizar as informações de cada candidato (Nome, email, telefone, cidade e estado); - OK
 Eu como usuário, desejo enviar para a "LIXEIRA" um usuário que esteja na listagem "TODOS" ou "ATENDIDOS"; - OK

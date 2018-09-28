@@ -42,8 +42,8 @@ delEmployee(id: number): Observable<Employee> {
 
 		EMPLOYEES.forEach((key : any, val: any) => {
                 //key['index'] = val + 1;
-                console.log (key);  
-                console.log (val);                                                                				                
+                // console.log (key);  
+                // console.log (val);                                                                				                
                 if (key.id == id) {
                 	//coloca na lixeira
                 	EMPLOYEESDEL.push(EMPLOYEES[val]);
@@ -69,11 +69,6 @@ delEmployee(id: number): Observable<Employee> {
                 }
             });		
 
-		console.log (EMPLOYEES);
-		console.log (EMPLOYEESDEL);
-		console.log (EMPLOYEESANS);
-
-
 
 	   return of( );
 	  }	  
@@ -87,8 +82,8 @@ putEmployeeBack(id: number): Observable<Employee> {
 
 		EMPLOYEESDEL.forEach((key : any, val: any) => {
                 //key['index'] = val + 1;
-                console.log (key);  
-                console.log (val);                                                                				                
+                // console.log (key);  
+                // console.log (val);                                                                				                
                 if (key.id == id) {
                 	//coloca na lixeira
                 	EMPLOYEES.push(EMPLOYEESDEL[val]);
@@ -113,12 +108,6 @@ putEmployeeBack(id: number): Observable<Employee> {
 
                 }
             });		
-
-		console.log (EMPLOYEES);
-		console.log (EMPLOYEESDEL);
-		console.log (EMPLOYEESANS);
-
-
 
 	   return of( );
 	  }	 
@@ -157,13 +146,8 @@ putEmployeeInAnswer(id: number): Observable<Employee> {
                 }
             });		
 
-		console.log (EMPLOYEES);
-		console.log (EMPLOYEESDEL);
-		console.log (EMPLOYEESANS);
-
-
-
 	   return of( );
+
 	  }	 	   	  
 
 
@@ -183,35 +167,25 @@ putEmployeeInAnswer(id: number): Observable<Employee> {
 
 		this.globals.firstLoading = this.globals.firstLoading + 1;
 
-		
-
 		const page = 1;
-
 
 		if (this.globals.firstLoading == 1) { 		
 
+			this.http.get('https://randomuser.me/api/?page='+page+'&results=20').subscribe((data:any) =>   {
+			     this.globals.firstLoading = this.globals.firstLoading + 1;                     		     			     		      
+						data.results.forEach((key : any, val: any) => {
+		                        key['index'] = val + 1;
+		                        //console.log (key);                                                		                        
+								if ( key.id.value != NaN && key.id.value != null && key.id.value.indexOf('NaN') == -1  && key.id.value.indexOf(' ') == -1) {
 
-		this.http.get('https://randomuser.me/api/?page='+page+'&results=20').subscribe((data:any) =>   {
+		                        	EMPLOYEES.push( { 'id' : parseInt(key.id.value),'name' : key.name.first + ' ' + key.name.last , 'email' : key.email, 'phone' : key.phone, 'city' : key.location.city, 'state' : key.location.state, 'avatar' : key.picture.large } );
 
-		     this.globals.firstLoading = this.globals.firstLoading + 1;                     		     
-		     		      
-					data.results.forEach((key : any, val: any) => {
-	                        key['index'] = val + 1;
-	                        console.log (key);                                                
-	                        
+		                        }                        
+		                        
+		                    })
 
-							if ( key.id.value != NaN && key.id.value != null && key.id.value.indexOf('NaN') == -1  && key.id.value.indexOf(' ') == -1) {
-
-	                        	EMPLOYEES.push( { 'id' : parseInt(key.id.value),'name' : key.name.first + ' ' + key.name.last , 'email' : key.email, 'phone' : key.phone, 'city' : key.location.city, 'state' : key.location.state, 'avatar' : key.picture.large } );
-
-	                        }                        
-	                        
-	                    })
-
-		    });			
+			    });			
 		}
-
-
 
 	   this.messageService.add('EmployeeService: funcionarios buscados!');	   
 	   
@@ -237,8 +211,6 @@ putEmployeeInAnswer(id: number): Observable<Employee> {
                         }                        
                         
                     })
-
-				//console.log (EMPLOYEES);
 
 
 	    });
