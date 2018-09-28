@@ -1,4 +1,85 @@
 * {
 	margin: 0;
-	padding: 0;
+	padding: 0;	
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+
+
+body {
+	
+
+}
+
+
+$azul: #2c3e50;
+$verde: #b3c02b;
+$cinza: #f9f9f9;
+$cinza-escuro: #a3a3a3;
+
+
+
+div.container {
+
+	font-family: 'Roboto', sans-serif;
+	font-weight: normal;
+	font-weight: 300;
+
+	.header {
+		height: 60px;
+		background: $azul;
+
+		h1 {
+			width: 140px;
+			height: 60px;
+			background: url("../assets/logo-zup-white.svg") no-repeat center center;
+			background-size: 80px auto;
+			text-indent: -1999px;
+			overflow: hidden;
+			display: block;	
+			margin: 0 auto;
+		}
+	}
+
+	section {
+		padding: 0 0 20px 0;
+		&.sidebar {
+			float: left;
+			width: 20%;
+			height: 100vh;
+			min-height: 100%;
+
+			nav {
+				font-size: 20px;
+				padding-top: 20px;
+				a {
+					display: block;
+					padding: 10px 20px;
+					color:$cinza-escuro;
+					text-decoration: none;
+
+
+					&:hover {
+						color:$verde;
+					}
+
+					&.active {
+						color:$verde;
+					}					
+				}
+			}
+		}
+		&.content {
+			float: right;
+			width: 76%;
+			background: $cinza;	
+			padding: 10px 20px;	
+		}
+		&.hold-menu {
+	
+		}
+	}
 }

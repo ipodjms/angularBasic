@@ -1,15 +1,24 @@
+<div class="container">
+	<div class="row">
+		<div classs="col col-12 text-center">
+			<div class="header">
+				<h1>{{title}}</h1>		
+			</div>
+		</div>		
+	</div>
+	<section class="sidebar">
+		<nav>
+		  <!-- <a routerLink="/dashboard">Dashboard</a> -->
+		  <a routerLink="/employees">Todos</a>
+		  <a routerLink="/trash">Lixeira</a>
+		  <a routerLink="/answer">Atendidos</a>
+		</nav>
+	</section>
+	
+	<section class="content">
+		<router-outlet></router-outlet>
+		<app-messages></app-messages>
+	</section>
 
-<div class="row">
-	<div classs="col col-12 text-center">
-		<h1>{{title}}</h1>		
-	</div>	
+	
 </div>
-
-<nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/employees">Todos</a>
-  <a routerLink="/trash">Lixeira</a>
-  <a routerLink="/answer">Respondidos</a>
-</nav>
-<router-outlet></router-outlet>
-<app-messages></app-messages>
